@@ -16,8 +16,8 @@ This Turborepo uses [yarn](https://classic.yarnpkg.com/lang/en/) as a packages m
 
 ### Apps and Packages
 
-- `web`: a [Next.js](https://nextjs.org/) app that contains the project's front end
-- `ui`: a stub React component library used by the `web` application
+- `client`: a [Next.js](https://nextjs.org/) app that contains the project's front end
+- `ui`: a stub React component library used by the `client` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
