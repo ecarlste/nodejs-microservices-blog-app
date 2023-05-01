@@ -1,16 +1,11 @@
-import { Input } from './input';
-import { Label } from './label';
+import { InputWithLabel } from './input-with-label';
 
 export function PostsCreate() {
   return (
     <div>
       <form>
-        <div>
-          <Label>Title</Label>
-          <Input />
-          <Label>Title</Label>
-          <Input />
-        </div>
+        <InputWithLabel label="Email" inputId="email" inputType="email" />
+
         <button>Submit</button>
       </form>
     </div>
