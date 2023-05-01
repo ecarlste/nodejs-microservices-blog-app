@@ -1,3 +1,4 @@
+import { Button } from './button';
 import { InputWithLabel } from './input-with-label';
 
 export function PostsCreate() {
@@ -6,7 +7,7 @@ export function PostsCreate() {
       <form>
         <InputWithLabel label="Email" inputId="email" inputType="email" />
 
-        <button>Submit</button>
+        <Button>Submit</Button>
       </form>
     </div>
   );
