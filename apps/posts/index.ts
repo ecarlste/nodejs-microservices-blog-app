@@ -2,17 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { v4 as uuidv4 } from 'uuid';
+import { Post } from 'types/post';
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
 const port = 4000;
-
-interface Post {
-  id: string;
-  title: string;
-}
 
 const posts: { [key: string]: Post } = {};
 
