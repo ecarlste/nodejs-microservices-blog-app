@@ -1,9 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 const port = 4000;
 
