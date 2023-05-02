@@ -6,7 +6,7 @@ function PostCard(props: { post: Post }) {
 }
 
 export function PostList(props: { posts: any }) {
-  const postIds = Object.keys(props.posts);
+  const posts: Post[] = Object.values(props.posts);
 
   return (
     <section className="bg-white dark:bg-gray-900">
@@ -15,8 +15,8 @@ export function PostList(props: { posts: any }) {
           Post List
         </h2>
 
-        {postIds.map((postId) => (
-          <PostCard key={postId} post={props.posts[postId]} />
+        {posts.map((post: Post) => (
+          <PostCard key={post.id} post={post} />
         ))}
       </div>
     </section>
