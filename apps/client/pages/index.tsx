@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import { PostCreate } from 'ui/post-create';
+import { PostList } from 'ui/post-list';
 
 export default function Home() {
   const [titleValue, setTitleValue] = useState('');
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <PostCreate onSubmit={handleSubmit} setTitleValue={setTitleValue} />
+      <PostList />
     </>
   );
 }

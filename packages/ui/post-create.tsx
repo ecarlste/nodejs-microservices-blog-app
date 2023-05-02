@@ -12,7 +12,7 @@ export function PostCreate(props: PostCreateProps) {
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
-          Posts Create
+          Create Post
         </h2>
         <form onSubmit={props.onSubmit}>
           <div className="flex flex-col gap-4 sm:gap-6">

@@ -9,12 +9,12 @@ app.use(cors());
 
 const port = 4000;
 
-interface post {
+interface Post {
   id: string;
   title: string;
 }
 
-const posts: { [key: string]: post } = {};
+const posts: { [key: string]: Post } = {};
 
 app.get('/posts', (req, res) => {
   res.status(200).send(posts);
