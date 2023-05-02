@@ -1,24 +1,42 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent } from 'react';
 import axios from 'axios';
 import { Post } from 'types/post';
 import { PostCreate } from 'ui/post-create';
 import { PostList } from 'ui/post-list';
 
 export default function Home(props: { posts: Post[] }) {
-  const [titleValue, setTitleValue] = useState('');
-
-  async function handleSubmit(event: FormEvent) {
+  async function handleCreatePostSubmit(event: FormEvent, title: string) {
     event.preventDefault();
 
     const response = await axios.post('http://localhost:4000/posts', {
-      title: titleValue,
+      title,
     });
+
+    console.log(response.data);
+  }
+
+  async function handleCreateCommentSubmit(
+    event: FormEvent,
+    postId: string,
+    content: string
+  ) {
+    event.preventDefault();
+
+    const response = await axios.post(
+      `http://localhost:4001/posts/${postId}/comments`,
+      {
+        postId,
+        content,
+      }
+    );
+
+    console.log(response.data);
   }
 
   return (
     <>
-      <PostCreate onSubmit={handleSubmit} setTitleValue={setTitleValue} />
-      <PostList posts={props.posts} />
+      <PostCreate onSubmit={handleCreatePostSubmit} />
+      <PostList onSubmit={handleCreateCommentSubmit} posts={props.posts} />
     </>
   );
 }
