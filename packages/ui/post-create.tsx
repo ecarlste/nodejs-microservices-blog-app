@@ -2,12 +2,12 @@ import { Dispatch, FormEvent, SetStateAction, useRef } from 'react';
 import { Button } from './button';
 import { InputWithLabel } from './input-with-label';
 
-interface PostsCreateProps {
+interface PostCreateProps {
   onSubmit: (event: FormEvent) => {};
   setTitleValue: Dispatch<SetStateAction<string>>;
 }
 
-export function PostsCreate(props: PostsCreateProps) {
+export function PostCreate(props: PostCreateProps) {
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
